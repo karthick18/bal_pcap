@@ -12,9 +12,10 @@ We just reverse engineer the bal api packet using the logic from which it was cr
 We run it against the bal_pb2 serializer based on the Path/object we are parsing.
 And then dump the packet.
 
-Right now, it supports BalInit, BalCfg, and Heartbeat.
+Right now, it supports BalInit, BalCfgSet,BalHeartbeat and BalIndications which should make for a good starting line up.
 
 The packet capture asfvolt16.pcap here was created using my bal_voltha project at:
+
 http://github.com/karthick18/bal_voltha
 and simulating a run of activation with bal edge core.
 
