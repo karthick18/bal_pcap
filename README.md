@@ -6,9 +6,11 @@ In order to deserialize the protobuf packet, we need to
 decode the field/tag:value binary format which is cool and optimized encoding.
 
 However we also would need to map it to the grpc descriptor out.
+
 Do you really want to replicate Jeff Dean's brilliance? :)
 
 We just reverse engineer the bal api packet using the logic from which it was created.
+
 We run it against the bal_pb2 serializer based on the Path/object we are parsing.
 And then dump the packet.
 
