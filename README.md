@@ -1,13 +1,17 @@
 # bal_pcap
 To decode bal voltha adapter grpc packets.
 The GRPC bal packet is encoded as a HTTP2/protobuf packet.
+
 In order to deserialize the protobuf packet, we need to
 decode the field/tag:value binary format which is cool and optimized encoding.
+
 However we also would need to map it to the grpc descriptor out.
 Do you really want to replicate Jeff Dean's brilliance? :)
+
 We just reverse engineer the bal api packet using the logic from which it was created.
 We run it against the bal_pb2 serializer based on the Path/object we are parsing.
 And then dump the packet.
+
 Right now, it supports BalInit, BalCfg, and Heartbeat.
 
 The packet capture asfvolt16.pcap here was created using my bal_voltha project at:
@@ -24,8 +28,7 @@ the bal grpc and indications port.
 Like:
 tcpdump -i any -w ~/asf.pcap port 50051 or port 60001
 
-'''
-PEM-KRAMANAR-01:bal_pcap kramanar$ make run
+make run
 ./bal_pcap.py asfvolt16.pcap
 BalApiInit
 ----------------------------------------
@@ -51,4 +54,3 @@ BalApiHeartbeat
 device_id: "0001cb6cfb7b3ffb"
 
 ----------------------------------------
-'''
