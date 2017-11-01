@@ -41,6 +41,16 @@ class BalPcap(object):
         bal_path_map = { 'BalApiInit' : bal_pb2.BalInit(),
                          'BalCfgSet'  : bal_pb2.BalCfg(),
                          'BalApiHeartbeat' : bal_pb2.BalHeartbeat(),
+                         'BalAccTermInd' : bal_pb2.BalIndications(),
+                         'BalFlowInd' : bal_pb2.BalIndications(),
+                         'BalPktBearerChannelRxInd' : bal_pb2.BalIndications(),
+                         'BalSubsTermInd' : bal_pb2.BalIndications(),
+                         'BalSubsTermDiscoveryInd' : bal_pb2.BalIndications(),
+                         'BalPktOmciChannelRxInd' : bal_pb2.BalIndications(),
+                         'BalTmQueueIndInfo' : bal_pb2.BalIndications(),
+                         'BalTmSchedIndInfo' : bal_pb2.BalIndications(),
+                         'BalIfaceStat' : bal_pb2.BalIndications(),
+                         'BalIfaceInd' : bal_pb2.BalIndications(),
         }
         for path, obj in bal_path_map.iteritems():
             path_index = payload.find(path)
