@@ -10,7 +10,7 @@ bal_pb2: $(PROTOS)
 	$(PROTOC) --python_out=. $(PROTOS)
 
 run:
-	$(BAL_PCAP) $(PCAP_FILE)
+	$(BAL_PCAP) --pcap=$(PCAP_FILE)
 
 clean:
 	rm -f *.pyc *~
