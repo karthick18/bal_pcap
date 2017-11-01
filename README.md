@@ -26,7 +26,10 @@ In order to generate the pcap in a real environment, just run a tcpdump against
 the bal grpc and indications port.
 
 Like:
+```
 tcpdump -i any -w ~/asf.pcap port 50051 or port 60001
+```
+
 ```
 make run
 ./bal_pcap.py asfvolt16.pcap
