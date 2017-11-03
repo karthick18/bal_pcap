@@ -61,3 +61,16 @@ device_id: "0001cb6cfb7b3ffb"
 
 ----------------------------------------
 ```
+
+In order to decode the packets in real-time as they are captured by tcpdump,
+do the following:
+
+```
+sudo tcpdump -i any -w /tmp/bal_stream.pcap -xxx -vvv -U -p tcp port 50051 or port 60001
+
+And on another shell:
+
+./bal_pcap.py --pcap /tmp/bal_stream.pcap --stream
+
+And watch the BAL grpc packets being decoded as they arrive.
+```
